@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @Getter @Setter
@@ -12,11 +13,8 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Builder
-public class Autor {
+public class Autor extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String nombre;
     private String apellido;
     private String biografia;

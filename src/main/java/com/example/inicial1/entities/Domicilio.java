@@ -2,6 +2,7 @@ package com.example.inicial1.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,10 +14,8 @@ import java.util.Set;
 @Getter
 @ToString
 @Builder
-public class Domicilio {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Domicilio extends BaseEntity {
+
     private String calle;
     private int numero;
 

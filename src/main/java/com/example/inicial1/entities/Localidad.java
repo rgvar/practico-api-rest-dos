@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
 @Entity
 @AllArgsConstructor
@@ -13,10 +14,7 @@ import lombok.*;
 @Getter
 @ToString
 @Builder
-public class Localidad {
+public class Localidad extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String denominacion;
 }

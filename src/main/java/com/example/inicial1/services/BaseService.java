@@ -1,11 +1,14 @@
 package com.example.inicial1.services;
 
+import com.example.inicial1.entities.BaseEntity;
+
+import java.io.Serializable;
 import java.util.List;
 
-public interface BaseService<T> {
-    List<T> findAll() throws Exception;
-    T findById(Long id) throws Exception;
-    T save(T entity) throws Exception;
-    T update(Long id, T entity) throws Exception;
-    boolean delete(Long id) throws Exception;
+public interface BaseService<E extends BaseEntity, ID extends Serializable> {
+    List<E> findAll() throws Exception;
+    E findById(ID id) throws Exception;
+    E save(E entity) throws Exception;
+    E update(ID id, E entity) throws Exception;
+    boolean delete(ID id) throws Exception;
 }

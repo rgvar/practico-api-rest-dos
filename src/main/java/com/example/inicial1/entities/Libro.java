@@ -2,7 +2,9 @@ package com.example.inicial1.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.envers.Audited;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,12 +15,10 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Builder
-public class Libro {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Libro extends BaseEntity {
+
     private String titulo;
-    private int fecha;
+    private LocalDate fecha;
     private String genero;
     private int paginas;
 
