@@ -7,6 +7,8 @@ import com.example.inicial1.services.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonaServiceImplementation extends BaseServiceImplementation<Persona, Long> implements PersonaService {
 
@@ -17,4 +19,13 @@ public class PersonaServiceImplementation extends BaseServiceImplementation<Pers
         super(baseRepository);
     }
 
+    @Override
+    public List<Persona> searchXNombre(String nombre) throws Exception {
+        try {
+            return personaRepository.searchXNombre(nombre);
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
 }

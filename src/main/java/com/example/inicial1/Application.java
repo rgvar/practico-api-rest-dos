@@ -21,14 +21,18 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 
 		System.out.println("FUNCIONANDO");
+
+
 	}
 
 	@Bean
 	@Transactional
 	CommandLineRunner init(PersonaRepository personaRepository) {
-		return args -> { };
+		return args -> {
 
 		};
+
+	};
 
 
 

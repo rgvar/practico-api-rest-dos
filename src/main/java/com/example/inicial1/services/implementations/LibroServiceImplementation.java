@@ -7,6 +7,8 @@ import com.example.inicial1.services.LibroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LibroServiceImplementation extends BaseServiceImplementation<Libro, Long> implements LibroService {
 
@@ -16,5 +18,38 @@ public class LibroServiceImplementation extends BaseServiceImplementation<Libro,
     public LibroServiceImplementation(BaseRepository<Libro, Long> baseRepository) {
         super(baseRepository);
     }
+
+    @Override
+    public List<Libro> searchXTitulo(String titulo) throws Exception {
+        try {
+            return libroRepository.searchXTitulo(titulo);
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+
+        }
+    }
+
+    @Override
+    public List<Libro> searchXGenero(String genero) throws Exception {
+        try {
+            return libroRepository.searchXGenero(genero);
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+
+        }
+    }
+
+    @Override
+    public List<Libro> searchXAutor(String nombreAutor) throws Exception {
+        try {
+            return libroRepository.searchXAutor(nombreAutor);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
+
 
 }
